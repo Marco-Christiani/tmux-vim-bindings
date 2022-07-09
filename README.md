@@ -1,28 +1,21 @@
 tmux-vim-bindings
 =================
-
-[tmux-vim-bindings][0] is vim-compatible tmux bindings (hotkeys) configuration
-as a TPM plugin. This plugin is compatible with [ek9/tmux-config][1] and
-[ek9/vim-config][2].
-
-**Note!** For an example config please check [tmux.conf in ek9/shell-config][9].
-
-Part of [ek9/dotfiles][10] collection.
+Forked from [0]
 
 ## Requirements
 
-- [tmux][3]
-- [TPM][4]
+- [tmux][1]
+- [TPM][2]
 
 ## Install
 
-Add plugin to the list of [TPM][4] plugins in `.tmux.conf`:
+Add plugin to the list of [TPM][2] plugins in `.tmux.conf`:
 
 ```
-set -g @plugin 'ek9/tmux-vim-bindings'
+set -g @plugin 'Marco-Christiani/tmux-vim-bindings'
 ```
 
-Hit `prefix + I` to fetch the plugin and source it.
+`prefix + I` to fetch the plugin and source it.
 
 ## Bindings
 
@@ -33,8 +26,11 @@ Hit `prefix + I` to fetch the plugin and source it.
   `Alt+a num`).
 - `Alt+a d` - detach
 - `Alt+q` - list key bindings (hotkeys)
-- `Alt+c` - tmux cmd prompt
+- `Alt+c` - tmux new window
+- `Alt+C` - tmux cmd prompt
 - `Alt+m` - tmux man prompt
+- `Alt+n` - tmux next window
+- `Alt+p` - tmux prev window
 
 Minor `tmux` key optimizations:
 
@@ -65,16 +61,13 @@ Minor `tmux` key optimizations:
 
 ## Authors
 
-Copyright (c) 2015-2017 ek9 <dev@ek9.co> (https://ek9.co).
+[ek9](https://github.com/ek9/)
+[Me](https://github.com/Marco-Christiani/)
 
 ## License
 
 Licensed under [MIT License](LICENSE).
 
 [0]: https://github.com/ek9/tmux-vim-bindings
-[1]: https://github.com/ek9/tmux-config
-[2]: https://github.com/ek9/vim-config
-[3]: https://github.com/tmux/tmux
-[4]: https://github.com/tmux-plugins/tpm
-[9]: https://github.com/ek9/shell-config/blob/master/.tmux.conf
-[10]: https://github.com/ek9/dotfiles
+[1]: https://github.com/tmux/tmux
+[2]: https://github.com/tmux-plugins/tpm
