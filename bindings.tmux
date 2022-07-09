@@ -131,11 +131,17 @@ main() {
     # <Alt+Tab> toggle last pane
     tmux bind-key -n M-Tab last-pane
 
-    # <Alt+h/l/j/k> pane selection
+    # <Alt+h/l> pane left/right
     tmux bind-key -n M-h   select-pane -L
     tmux bind-key -n M-l   select-pane -R
-    tmux bind-key -n M-j   select-pane -D
-    tmux bind-key -n M-k   select-pane -U
+    
+    # prefix+j/k pane up/down (use Alt-j/k in vim)
+    tmux bind-key -T prefix j   select-pane -D
+    tmux bind-key -T prefix k   select-pane -U
+    
+    # prefix+l/h pane right/left for continuity
+    tmux bind-key -T prefix l   select-pane -R
+    tmux bind-key -T prefix h   select-pane -L
 
     # <Alt+Left/Right/Down/Up> pane resize
     # -r argument makes it repeatable
