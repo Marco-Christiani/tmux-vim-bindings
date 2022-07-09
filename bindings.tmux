@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-## ek9/tmux-vim-bindings - https://github.com/ek9/tmux-vim-bindings
 ## tmux vim-compatible bindings
 
 ## Prefix
@@ -13,9 +12,7 @@
 # C-d       prefix + d (<Alt+a d>)
 
 main() {
-
-### Setup
-### Setup required options and unbind all keys
+    ### Setup required options and unbind all keys
 
     # address vim mode switching delay (http://superuser.com/a/252717/65504)
     tmux set-option -s escape-time 0
@@ -29,12 +26,10 @@ main() {
     # <Alt+a> as prefix
     tmux set-option -g prefix M-a
 
-### Generic Hotkeys
-###
+    ### Generic Hotkeys
 
-    # <Alt+A> as prefix
-    tmux bind-key M-a       send-prefix
-    tmux bind-key -n C-a       send-prefix
+    # <C-s> as prefix
+    tmux bind-key C-s       send-prefix
 
 
     # <Alt+r> reload tmux config (source-file ~/.tmux.conf)
@@ -46,9 +41,9 @@ main() {
         tmux source-file ~/.tmux.conf; \
         tmux display-message "Sourced .tmux.conf!"'
 
-    # <Alt+n> tmux cmd prompt
-    tmux bind-key -n M-"n"    command-prompt -p "tmux:"
-    tmux bind-key -T prefix n           command-prompt -p "tmux:"
+    # <Alt+C> tmux cmd prompt
+    tmux bind-key -n M-"C"    command-prompt -p "tmux:"
+    tmux bind-key -T prefix C           command-prompt -p "tmux:"
     # <Alt+m> man prompt
     tmux bind-key -n M-"m"    command-prompt -p "man:" "split-window -h 'man %%'"
     tmux bind-key -T prefix "m"         command-prompt -p "man:" "split-window -h 'man %%'"
@@ -57,8 +52,8 @@ main() {
     # <Alt+/> list keys
     tmux bind-key -n M-/    list-keys
 
-### Session Hotkeys
-###
+    ### Session Hotkeys
+    ###
     # <Alt+e> list sessions
     tmux bind-key -n M-e    choose-session
     tmux bind-key e choose-session
@@ -67,8 +62,8 @@ main() {
     tmux bind-key -n M-t  command-prompt -I \#S "rename-session '%%'"
     tmux bind-key t   command-prompt -I \#S "rename-session '%%'"
 
-### Window Hotkeys
-###
+    ### Window Hotkeys
+    ###
 
     # <Alt+w> list windows
     tmux bind-key -n M-w    list-windows
@@ -79,6 +74,16 @@ main() {
 
     # <Alt+c> new window
     tmux bind-key -n M-c    new-window
+    
+    # <Alt+n> next window
+    tmux bind-key -n M-n    next-window
+    # <Alt+p> previous window
+    tmux bind-key -n M-p    next-window
+    
+    # <prefix+.> swap window backward
+    tmux bind-key -T prefix "."   swap-window -D
+    # <prefix+,> swap window forward
+    tmux bind-key -T prefix ","   swap-window -D
 
     # <prefix w> kill window(s)/pane(s) (repeatable)
     tmux bind-key -n M-x  confirm-before kill-pane
@@ -124,8 +129,7 @@ main() {
     tmux bind-key -n M-"="  select-window -t 12
     tmux bind-key -T prefix "="       select-window -t 1
 
-### Pane Hotkeys
-###
+    ### Pane Hotkeys
     # <Alt+Tab> toggle last pane
     tmux bind-key -n M-Tab last-pane
 
