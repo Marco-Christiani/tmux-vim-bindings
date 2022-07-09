@@ -81,9 +81,9 @@ main() {
     tmux bind-key -n M-p    next-window
     
     # <prefix+.> swap window backward
-    tmux bind-key -T prefix "."   swap-window -D
+    tmux bind-key -T prefix "."   swap-window -t -1
     # <prefix+,> swap window forward
-    tmux bind-key -T prefix ","   swap-window -D
+    tmux bind-key -T prefix ","   swap-window -t +1
 
     # <prefix w> kill window(s)/pane(s) (repeatable)
     tmux bind-key -n M-x  confirm-before kill-pane
