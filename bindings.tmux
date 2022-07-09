@@ -63,8 +63,6 @@ main() {
     tmux bind-key t   command-prompt -I \#S "rename-session '%%'"
 
     ### Window Hotkeys
-    ###
-
     # <Alt+w> list windows
     tmux bind-key -n M-w    list-windows
     tmux bind-key -T prefix w list-windows
@@ -78,7 +76,7 @@ main() {
     # <Alt+n> next window
     tmux bind-key -n M-n    next-window
     # <Alt+p> previous window
-    tmux bind-key -n M-p    next-window
+    tmux bind-key -n M-p    previous-window
     
     # <prefix+,> swap window backward
     tmux bind-key -T prefix "," swap-window -t -1 -d
