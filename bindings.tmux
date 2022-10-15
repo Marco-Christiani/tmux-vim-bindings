@@ -50,7 +50,7 @@ main() {
 
 
     # <Alt+/> list keys
-    tmux bind-key -n M-/    list-keys
+    # tmux bind-key -n M-/    list-keys
 
     ### Session Hotkeys
     ###
@@ -131,9 +131,10 @@ main() {
     # <Alt+Tab> toggle last pane
     tmux bind-key -n M-Tab last-pane
 
+    # JK: Use tmux/vim navigator
     # <Alt+h/l> pane left/right
-    tmux bind-key -n M-h   select-pane -L
-    tmux bind-key -n M-l   select-pane -R
+    # tmux bind-key -n M-h   select-pane -L
+    # tmux bind-key -n M-l   select-pane -R
     
     # prefix+j/k pane up/down (use Alt-j/k in vim)
     tmux bind-key -T prefix j   select-pane -D
