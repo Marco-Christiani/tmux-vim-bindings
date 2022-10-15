@@ -156,7 +156,7 @@ main() {
     tmux bind-key -r -T prefix 'Up'     resize-pane -U 5
     
     # <Alt+z> Toggle zoom pane
-    tmux bind-key -r M-z resize-pane -Z
+    tmux bind-key -nr M-z resize-pane -Z
 
     # <Alt+.> swap pane backward
     tmux bind-key -n M-"."   swap-pane -D
