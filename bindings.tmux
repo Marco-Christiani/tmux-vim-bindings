@@ -87,8 +87,8 @@ main() {
     tmux bind-key -n M-x  confirm-before kill-pane
 
     # <Alt+s> split window vertically
-    tmux bind-key -n M-s    split-window -v
-    tmux bind-key -T prefix s         split-window -v
+    tmux bind-key -n M-s    split-window -v -c "#{pane_current_path}"
+    tmux bind-key -T prefix s         split-window -v -c "#{pane_current_path}"
 
     # <Alt+v> split window horizontally
     tmux bind-key -n M-v    split-window -h
