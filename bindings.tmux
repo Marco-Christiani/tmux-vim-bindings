@@ -91,8 +91,8 @@ main() {
     tmux bind-key -T prefix s         split-window -v -c "#{pane_current_path}"
 
     # <Alt+v> split window horizontally
-    tmux bind-key -n M-v    split-window -h "#{pane_current_path}"
-    tmux bind-key -T prefix v         split-window -h "#{pane_current_path}"
+    tmux bind-key -n M-v    split-window -h -c "#{pane_current_path}"
+    tmux bind-key -T prefix v         split-window -h -c "#{pane_current_path}"
 
     # <Alt+w> select window
     tmux bind-key -n M-"'"  command-prompt -p index "select-window -t ':%%'"
